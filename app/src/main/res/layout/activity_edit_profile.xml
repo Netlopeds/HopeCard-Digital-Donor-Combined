@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_grey"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvEditProfileHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textColor="@color/header_red"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/profileImageContainer"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/circle_bg"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEditProfileHeader">
+
+            <ImageView
+                android:id="@+id/ivProfilePicture"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:scaleType="centerInside"
+                android:src="@android:drawable/ic_menu_report_image" />
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/btnChangeProfilePicture"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="-30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/transparent"
+            android:padding="8dp"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/ic_menu_edit"
+            app:layout_constraintBottom_toBottomOf="@id/profileImageContainer"
+            app:layout_constraintStart_toEndOf="@id/profileImageContainer"
+            app:tint="@color/label_grey" />
+
+        <!-- Information Section -->
+        <TextView
+            android:id="@+id/tvInformationHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Information"
+            android:textColor="@color/header_red"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profileImageContainer" />
+
+        <TextView
+            android:id="@+id/tvUsernameLabel"
+            style="@style/LabelStyle"
+            android:text="Username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvInformationHeader" />
+
+        <EditText
+            android:id="@+id/etUsername"
+            style="@style/InputStyle"
+            android:drawableEnd="@android:drawable/ic_menu_edit"
+            android:hint="Juandelacruz123"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUsernameLabel" />
+
+        <TextView
+            android:id="@+id/tvFirstNameLabel"
+            style="@style/LabelStyle"
+            android:text="First Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etUsername" />
+
+        <EditText
+            android:id="@+id/etFirstName"
+            style="@style/InputStyle"
+            android:hint="Enter your name"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvFirstNameLabel" />
+
+        <TextView
+            android:id="@+id/tvLastNameLabel"
+            style="@style/LabelStyle"
+            android:text="Last Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etFirstName" />
+
+        <EditText
+            android:id="@+id/etLastName"
+            style="@style/InputStyle"
+            android:hint="Enter your name"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLastNameLabel" />
+
+        <TextView
+            android:id="@+id/tvMiddleNameLabel"
+            style="@style/LabelStyle"
+            android:text="Middle Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etLastName" />
+
+        <EditText
+            android:id="@+id/etMiddleName"
+            style="@style/InputStyle"
+            android:hint="Enter your name"
+            android:inputType="textPersonName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMiddleNameLabel" />
+
+        <TextView
+            android:id="@+id/tvDobLabel"
+            style="@style/LabelStyle"
+            android:text="Date of Birth"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etMiddleName" />
+
+        <EditText
+            android:id="@+id/etDob"
+            style="@style/InputStyle"
+            android:clickable="true"
+            android:drawableEnd="@android:drawable/arrow_down_float"
+            android:focusable="false"
+            android:hint="Select your date of birth"
+            android:inputType="none"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvDobLabel" />
+
+        <!-- Update Contact Section -->
+        <TextView
+            android:id="@+id/tvUpdateContactHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Update Contact"
+            android:textColor="@color/header_red"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etDob" />
+
+        <TextView
+            android:id="@+id/tvMobileLabel"
+            style="@style/LabelStyle"
+            android:text="Mobile Number"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUpdateContactHeader" />
+
+        <EditText
+            android:id="@+id/etMobile"
+            style="@style/InputStyle"
+            android:drawableEnd="@android:drawable/ic_menu_edit"
+            android:hint="+63 123 456 7891"
+            android:inputType="phone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvMobileLabel" />
+
+        <TextView
+            android:id="@+id/tvEmailLabel"
+            style="@style/LabelStyle"
+            android:text="Email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etMobile" />
+
+        <EditText
+            android:id="@+id/etEmail"
+            style="@style/InputStyle"
+            android:drawableEnd="@android:drawable/ic_menu_edit"
+            android:hint="juandelacruz@example.com"
+            android:inputType="textEmailAddress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEmailLabel" />
+
+        <!-- Update Password Section -->
+        <TextView
+            android:id="@+id/tvUpdatePasswordHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Update Password"
+            android:textColor="@color/header_red"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etEmail" />
+
+        <TextView
+            android:id="@+id/tvOldPasswordLabel"
+            style="@style/LabelStyle"
+            android:text="Old Password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUpdatePasswordHeader" />
+
+        <EditText
+            android:id="@+id/etOldPassword"
+            style="@style/InputStyle"
+            android:hint="Enter old password"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvOldPasswordLabel" />
+
+        <TextView
+            android:id="@+id/tvNewPasswordLabel"
+            style="@style/LabelStyle"
+            android:text="New Password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etOldPassword" />
+
+        <EditText
+            android:id="@+id/etNewPassword"
+            style="@style/InputStyle"
+            android:hint="Enter new password"
+            android:inputType="textPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNewPasswordLabel" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardUpdate"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="32dp"
+            app:cardCornerRadius="23dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="false"
+            app:cardPreventCornerOverlap="false"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etNewPassword"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+            <TextView
+                android:id="@+id/btnUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/bg_primary_button_gradient"
+                android:gravity="center"
+                android:text="Update"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:clickable="true"
+                android:focusable="true" />
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

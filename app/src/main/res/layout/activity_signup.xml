@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#000000"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerCarousel"
+                android:layout_width="match_parent"
+                android:layout_height="250dp" />
+
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:src="@drawable/logo_h"
+                android:layout_gravity="bottom|start"
+                android:layout_marginStart="24dp"
+                android:layout_marginBottom="50dp"
+                android:elevation="10dp" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-40dp"
+            android:background="@drawable/bg_sheet"
+            android:orientation="vertical"
+            android:paddingTop="40dp"
+            android:paddingBottom="48dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign up"
+                android:textAlignment="center"
+                android:textColor="#5B1717"
+                android:textSize="38sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="32dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Create Account"
+                android:textColor="#5B1717"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginBottom="16dp" />
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="24dp"
+                android:background="@drawable/bg_rounded_input"
+                android:drawableStart="@android:drawable/ic_menu_myplaces"
+                android:drawablePadding="16dp"
+                android:hint="Create a username"
+                android:paddingHorizontal="20dp"
+                android:textColorHint="@color/colorHint"
+                android:textSize="14sp"
+                android:elevation="8dp"
+                android:outlineSpotShadowColor="#000000"
+                android:outlineAmbientShadowColor="#000000"
+                android:stateListAnimator="@null" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_rounded_input"
+                android:drawableStart="@android:drawable/ic_dialog_email"
+                android:drawablePadding="16dp"
+                android:hint="Enter your email"
+                android:inputType="textEmailAddress"
+                android:paddingHorizontal="20dp"
+                android:textColorHint="@color/colorHint"
+                android:textSize="14sp"
+                android:elevation="8dp"
+                android:outlineSpotShadowColor="#000000"
+                android:outlineAmbientShadowColor="#000000"
+                android:stateListAnimator="@null" />
+
+            <EditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_rounded_input"
+                android:drawableStart="@android:drawable/ic_menu_call"
+                android:drawablePadding="16dp"
+                android:hint="Enter your phone number"
+                android:inputType="phone"
+                android:paddingHorizontal="20dp"
+                android:textColorHint="@color/colorHint"
+                android:textSize="14sp"
+                android:elevation="8dp"
+                android:outlineSpotShadowColor="#000000"
+                android:outlineAmbientShadowColor="#000000"
+                android:stateListAnimator="@null" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_rounded_input"
+                android:drawableStart="@android:drawable/ic_lock_idle_lock"
+                android:drawablePadding="16dp"
+                android:hint="Enter your Password"
+                android:inputType="textPassword"
+                android:paddingHorizontal="20dp"
+                android:textColorHint="@color/colorHint"
+                android:textSize="14sp"
+                android:elevation="8dp"
+                android:outlineSpotShadowColor="#000000"
+                android:outlineAmbientShadowColor="#000000"
+                android:stateListAnimator="@null" />
+
+            <EditText
+                android:id="@+id/etConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_rounded_input"
+                android:drawableStart="@android:drawable/ic_lock_idle_lock"
+                android:drawablePadding="16dp"
+                android:hint="Confirm your password"
+                android:inputType="textPassword"
+                android:paddingHorizontal="20dp"
+                android:textColorHint="@color/colorHint"
+                android:textSize="14sp"
+                android:elevation="8dp"
+                android:outlineSpotShadowColor="#000000"
+                android:outlineAmbientShadowColor="#000000"
+                android:stateListAnimator="@null" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Upload ID for Verification"
+                android:textColor="#5B1717"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="40dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_rounded_input"
+                android:elevation="4dp"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/tabFrontId"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingEnd="8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="8dp">
+                            <TextView
+                                android:id="@+id/tvTab1Number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1"
+                                android:textColor="#5B1717"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                android:layout_marginEnd="8dp"/>
+                            <TextView
+                                android:id="@+id/tvTab1Text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Front page of ID"
+                                android:textColor="#5B1717"
+                                android:textSize="11sp"/>
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/lineTab1"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="#5B1717"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tabBackId"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingStart="8dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:paddingBottom="8dp">
+                            <TextView
+                                android:id="@+id/tvTab2Number"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="2"
+                                android:textColor="@color/colorHint"
+                                android:textSize="20sp"
+                                android:layout_marginEnd="8dp"/>
+                            <TextView
+                                android:id="@+id/tvTab2Text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Back page of ID"
+                                android:textColor="@color/colorHint"
+                                android:textSize="11sp"/>
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/lineTab2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#D0D0D0"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/uploadBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_upload_box"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@android:drawable/ic_menu_camera" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Upload a copy of your valid identification\nin PNG, JPEG or PDF format"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorHint"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardFinish"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="48dp"
+                app:cardCornerRadius="23dp"
+                app:cardElevation="10dp"
+                app:cardUseCompatPadding="false"
+                app:cardPreventCornerOverlap="false"
+                app:cardBackgroundColor="@android:color/transparent">
+
+                <TextView
+                    android:id="@+id/btnFinish"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:background="@drawable/bg_primary_button_gradient"
+                    android:gravity="center"
+                    android:text="Finish"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:textSize="19sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="sans-serif-medium" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:layout_marginHorizontal="32dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="#C0C0C0" />
+
+                <LinearLayout
+                    android:id="@+id/tvLoginRedirect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Already have an account? "
+                        android:textColor="@color/colorHint"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Login here!"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1"
+                    android:background="#C0C0C0" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
