@@ -2,60 +2,31 @@ package com.example.hopecard.ui.forgot
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager2.widget.ViewPager2
 import com.example.hopecard.R
-import com.example.hopecard.ui.signup.CarouselAdapter
 import com.example.hopecard.ui.signup.SignUpActivity
 
 class ResetPasswordActivity : AppCompatActivity() {
 
-    private lateinit var viewPager: ViewPager2
-    private val sliderHandler = Handler(Looper.getMainLooper())
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_reset_password)
 
-        // Carousel setup
-        viewPager = findViewById(R.id.viewPagerCarousel)
         val images = listOf(R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4)
-        viewPager.adapter = CarouselAdapter(images)
-        val sliderRunnable = object : Runnable {
-            override fun run() {
-                viewPager.currentItem = (viewPager.currentItem + 1) % images.size
-                sliderHandler.postDelayed(this, 3000)
-            }
+
+        setContent {
+            ResetPasswordComposeScreen(
+                carouselImages = images,
+                onContinue = { newPassword ->
+                    // Matches old behavior
+                    Toast.makeText(this, "Password reset successfully!", Toast.LENGTH_LONG).show()
+                    finish()
+                },
+                onSignUp = {
+                    startActivity(Intent(this, SignUpActivity::class.java))
+                }
+            )
         }
-        sliderHandler.postDelayed(sliderRunnable, 3000)
-
-        val btnContinue = findViewById<TextView>(R.id.btnContinue)
-        val passwordInput = findViewById<EditText>(R.id.newPasswordInput)
-
-        btnContinue.setOnClickListener {
-            if (passwordInput.text.isNotEmpty()) {
-                // TODO(BACKEND): Submit new password to backend (requires verified OTP token).
-                Toast.makeText(this, "Password reset successfully!", Toast.LENGTH_LONG).show()
-                finish()
-            } else {
-                Toast.makeText(this, "Please enter a new password", Toast.LENGTH_SHORT).show()
-            }
-        }
-
-        // Sign up button
-        val tvSignUp = findViewById<TextView>(R.id.tvSignUp)
-        tvSignUp.setOnClickListener {
-            startActivity(Intent(this, SignUpActivity::class.java))
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        sliderHandler.removeCallbacksAndMessages(null)
     }
 }
